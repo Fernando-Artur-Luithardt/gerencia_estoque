@@ -39,8 +39,15 @@ $consultaMateriais = mysqli_query($conn, $sql);
             <div> 
                 <p><?=$materiais['descricao']?></p>
                 <p>data: <?=$materiais['data']?></p>
-            </div>   
+            </div>
+            <h2>ADICIONE SEU COMENTÁRIO:</h2>
+            <form action="funcoes/addComentario.php?id=<?= $materiais['id']?>" method="post">
+                <input type="text" name="comentario">
+                <button type="submit" class="btn btn-sm btn-outline-secondary">comentarios</button>
+             </form>   
     <?php } ?>
+    
+    
     <h2>COMENTÁRIOS:</h2>
     
     <table>
