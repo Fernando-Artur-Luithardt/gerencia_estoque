@@ -39,7 +39,7 @@ $consultaMateriais = mysqli_query($conn, $sql);
                                 <p class="card-text"><?=$materiais['descricao']?></p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
-                                        <form action="comentarios.php?id=<?= $materiais['material']?>" method="post">
+                                        <form action="comentarios.php?id=<?= $materiais['id']?>" method="post">
                                             <button type="submit" class="btn btn-sm btn-outline-secondary">comentarios</button>
                                         </form>
                                     </div>
