@@ -26,7 +26,11 @@ $consultaMateriais = mysqli_query($conn, $sql);
     
     <?php include("inc_menu.php"); ?>
     <?php
-       while($materiais = mysqli_fetch_array($consultaMateriais)){?>
+       while($materiais = mysqli_fetch_array($consultaMateriais)){
+            if($materiais['ativo'] == 0){
+                ?><h1>MATERIAL INATIVO NA BASE DE DADOS</h1><?php
+                exit;
+            }?>
             <div>
                 <h1><?=$materiais['material']?></h1>
                 <img src="<?= $materiais['imagem']?>" alt="Italian Trulli">
