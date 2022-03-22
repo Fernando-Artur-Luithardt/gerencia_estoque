@@ -20,7 +20,7 @@
         //$senha = md5($senha);
         if($senha == $arrusuario['senha']){
             session_start();
-            $_SESSION['usuario'] = $arrusuario;
+            $_SESSION['id'] = $arrusuario;
             header("Location: http://localhost/i4i/materiais.php");
 
             $response = array('mensagem' => "OK");
