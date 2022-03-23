@@ -2,7 +2,7 @@
 require 'funcoes/auth.php';
 require 'funcoes/banco.php';
 
-$sql = "SELECT * FROM `materiais`";
+$sql = "SELECT * FROM `materiais` ORDER BY data DESC";
 $consultaMateriais = mysqli_query($conn, $sql);
 
 ?>
@@ -33,9 +33,10 @@ $consultaMateriais = mysqli_query($conn, $sql);
                        <?php if ($materiais["ativo"] == 1){?>
                             <div class="col">
                             <div class="card shadow-sm">   
-                            <img src="<?= $materiais['imagem']?>" class="img-thumbnail" alt="Cinque Terre">
+                            <img src="<?= $materiais['imagem']?>" class="img-thumbnail" alt="assets\not-found">
                                 <div class="card-body">
                                 <h5 class="card-text"><?=$materiais['material']?></h5>
+                                <p class="card-text"><?=$materiais['data']?></p>
                                 <p class="card-text"><?=$materiais['descricao']?></p>
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="btn-group">
