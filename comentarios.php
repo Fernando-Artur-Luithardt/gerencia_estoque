@@ -4,7 +4,7 @@ require 'funcoes/banco.php';
 
 $material = $_REQUEST["id"];
 
-$sql = "SELECT * FROM `comentario` WHERE material = $material";
+$sql = "SELECT * FROM `comentario` WHERE material = $material ORDER BY data DESC";
 $consultaComentarios = mysqli_query($conn, $sql);
 
 $sql = "SELECT * FROM `materiais` WHERE id = $material";
