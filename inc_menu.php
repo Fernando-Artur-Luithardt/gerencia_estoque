@@ -6,10 +6,10 @@
 <div class="collapse navbar-collapse" id="navbarsExample02">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Administração Materiais</a>
+            <a class="nav-link" href="materiais.php">Controle de Materiais</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="addCond.php"></a>
+            <a class="nav-link" href="addMaterial.php">Adicionar Material</a>
           </li>
         </ul>
         <!-- <form class="form-inline my-2 my-md-0">
