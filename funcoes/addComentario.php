@@ -3,15 +3,15 @@
     require 'banco.php';
 
     $comentario = $_REQUEST["comentario"];
+    $codMaterial = $_REQUEST['id'];
     $userId = $_SESSION['id'];
-    $codMaterial = isset($_POST['material'])? $_POST['material']: "";
-    echo $codMaterial;
+
     if(empty($comentario) || empty($userId)) {
         $response = array('mensagem' => "campos obrigatórios faltando");
         exit;
     }
 
-    $sql = "INSERT INTO `comentario` (`comentario`,`user_id`,`material`) VALUES ('$comentario','$userId','$codMaterial')";
+    $sql = "INSERT INTO `comentario` (`comentario`,`user_id`,`material`) VALUES ('$comentario','$userId[id]','$codMaterial')";
     $cadastro = mysqli_query($conn, $sql);
 
     if (!$cadastro) {
@@ -21,6 +21,6 @@
         echo $responseJson;
         exit;
     }else {
-        // header("Location: http://localhost/i4i/comentarios.php");
+        header("Location: http://localhost/i4i/comentarios.php?id=$codMaterial");
     }
 ?>  
