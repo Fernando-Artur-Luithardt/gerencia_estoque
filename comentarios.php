@@ -60,10 +60,10 @@ $consultaMateriais = mysqli_query($conn, $sql);
         <?php if (!empty($consultaComentarios)) {
             while($comentarios = mysqli_fetch_array($consultaComentarios)){?>
                 <tr>
-                    <td><?=$comentarios['id']?></td>
+                    <td><?=$comentarios['user_id']?></td>
                     <td><?=$comentarios['comentario']?></td>
                     <td><?=$comentarios['data']?></td>
-                    <td><a href="#">editar</a></td>
+                    <td><a href="excluir.php<?=$comentarios['id']?>">excluir</a></td>
                 </tr> 
             <?php }
         }?>
