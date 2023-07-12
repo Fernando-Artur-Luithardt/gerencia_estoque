@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-<body>
     <form action="funcoes/login.php" method="post" id="formLogin">
         <div id="container">
             <div>
@@ -18,7 +17,7 @@
                 <br>
             </div class="input">
             <div>
-                <input type="text" name="id" required>
+                <input type="text" name="nome" required>
             </div>
 
             <div class="input">
@@ -30,7 +29,5 @@
             </div>
         </div>
     </form>
-<script>
-    
 </body>
 </html>

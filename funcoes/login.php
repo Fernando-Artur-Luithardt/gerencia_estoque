@@ -1,11 +1,11 @@
 <?php
     require 'banco.php';
-    $id = isset($_POST["id"])? $_POST['id']: "";
+    $nome = isset($_POST["nome"])? $_POST['nome']: "";
     $senha = isset($_POST["senha"])? $_POST['senha']: "";
 
     //validação não nulo
-    if(empty($id) || empty($senha)) {
-        $response = array('mensagem' => "id senha obrigatórios");
+    if(empty($nome) || empty($senha)) {
+        $response = array('mensagem' => "nome e senha obrigatórios");
         $responseJson = json_encode($response);
         http_response_code(400);
         echo $responseJson;
@@ -13,7 +13,7 @@
     }
 
     //validar se o usuário existe
-    $sql = "SELECT * FROM `usuario` WHERE id = '$id'";
+    $sql = "SELECT * FROM `usuario` WHERE nome = '$nome'";
     $usuariosCadastrados = mysqli_query($conn, $sql);
 
     if ($arrusuario = mysqli_fetch_array($usuariosCadastrados)) {

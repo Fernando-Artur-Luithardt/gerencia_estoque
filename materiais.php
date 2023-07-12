@@ -30,7 +30,7 @@ $consultaMateriais = mysqli_query($conn, $sql);
                 <?php
                 if (!empty($consultaMateriais)) {
                     while($materiais = mysqli_fetch_array($consultaMateriais)){?>
-                       <?php if ($materiais["ativo"] == 1){?>
+                       <?php if ($materiais["ativo"] == 1) : ?>
                             <div class="col">
                             <div class="card shadow-sm">   
                             <img src="<?= $materiais['imagem']?>" class="img-thumbnail" alt="assets\not-found">
@@ -49,8 +49,8 @@ $consultaMateriais = mysqli_query($conn, $sql);
                                 </div>
                             </div>
                             </div>
-                       <?php}?>        
-                    <?php }
+                       <?php endif ?>        
+                    <?php
                 }}?>
             </div>
         </div>

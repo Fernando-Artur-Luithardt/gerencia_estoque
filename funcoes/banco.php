@@ -4,7 +4,7 @@
 $host = "localhost"; //onde está
 $user = "root"; // usuario
 $pass = ""; // qual a senha
-$base = "fernando_i4i"; // qual a base de dados
+$base = "gerencia_estoque"; // qual a base de dados
 
 $conn = mysqli_connect($host, $user, $pass, $base);
     
